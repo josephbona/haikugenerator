@@ -13,12 +13,14 @@ function formatData(data){
 		lineSplit
 	lines.forEach(function(line){
 		lineSplit = line.split("  ");
-		var word = lineSplit[0];
-		var syllableCount = (lineSplit[1].match(/\d/g) || []).length;
-		if(!words[syllableCount]) {
-			words[syllableCount] = [];
+		if(lineSplit[1]){
+			var word = lineSplit[0];
+			var syllableCount = (lineSplit[1].match(/\d/g) || []).length;
+			if(!words[syllableCount]) {
+				words[syllableCount] = [];
+			}
+			words[syllableCount].push(word);
 		}
-		words[syllableCount].push(word);
 	});
 	return words;
 }
