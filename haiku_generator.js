@@ -10,15 +10,15 @@
 //   }).join('\n');
 // }
 
-function getWords (arr, sylbcnt) {
-	var num = sylbcnt;
+function getWords (arr, syls) {
+	var num = syls;
 	if (num === 0) {
 		return ""
 	}
-	var numArr = Object.keys(arr).slice(1, num+1)
-	var randomSylNum = parseInt(getRandom(numArr))
-	var word = getRandom(arr[randomSylNum])
-	return word+" "+getWords(arr, num-randomSylNum)
+	var numArr = Object.keys(arr).slice(1, num+1);
+	var randomSylNum = parseInt(getRandom(numArr));
+	var word = getRandom(arr[randomSylNum]);
+	return word+" "+getWords(arr, num-randomSylNum);
 }
 
 function getRandom (arr) {
